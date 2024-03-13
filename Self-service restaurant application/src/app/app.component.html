@@ -1,0 +1,185 @@
+<header>
+  <img id="logo" src="assets/logo-no-background.png">
+  <div id="pretraga-div">
+  <label  for="pretraga_jela">Pretraga:</label>
+  <input (input) ="pretraziArtikle()" [(ngModel)]="pretraga" id="pretraga_jela" type="text">
+  </div>
+</header>
+<div id="korpa-div">
+  <div id="korpa">
+    <div id="korpa-header">
+    <img src="assets/korpa.png">
+    <h3>Izabrani artikli</h3>
+    </div>
+    <table id="korpa-artikli">
+      <tr>
+        <th>Naziv</th>
+        <th>Broj komada</th>
+        <th>Cijena</th>
+      </tr>
+      <tr *ngFor="let x of korpa">
+        <td>{{x.naziv}}</td>
+        <td><button (click) = "smanji(x)">-</button>{{x.kolicina}}<button (click) ="povecaj(x)">+</button></td>
+        <td>{{(x.cijena*x.kolicina).toFixed(2)}} KM</td>
+      </tr>
+    </table>
+    <div id="korpa-button">
+      <button id="button-ocisti" (click) ="ocistiKorpu()">Očisti korpu</button>
+    </div>
+  </div>
+  <div id="komentar-div">
+    <label for="komentar">
+      Napomena (dodaci, specijalne želje)
+    </label>
+    <textarea id="komentar"></textarea>
+  </div>
+  <div id="predracun-div">
+    <h3>Predračun</h3>
+    <table>
+         <tr>
+           <td>Ukupna cijena:</td>
+           <td id="ukupna_cijena"></td>
+         </tr>
+      <tr>
+        <td>Cijena bez PDV-a:</td>
+        <td id="cijena_bez_pdv"></td>
+      </tr>
+      <tr>
+        <td>PDV:</td>
+        <td id="pdv"></td>
+      </tr>
+      <tr>
+        <td>PDV stopa:</td>
+        <td>17%</td>
+      </tr>
+    </table>
+    <button (click)="otvoriKorpu()" id="placanje">Kreiraj narudžbu</button>
+  </div>
+</div>
+<div id="main">
+<div id ="meni">
+<article (click) ="otvoriAkcijske()">
+  <figure><img src="assets/about-top.png"></figure>
+  <figcaption>
+    Akcijske ponude
+  </figcaption>
+</article>
+  <article (click)="otvoriBurgere()">
+    <figure><img style="border:3px solid rgb(243,168,60)" src="https://www.nrn.com/sites/nrn.com/files/mcdonalds-signature-crafted-burgers.jpg"></figure>
+    <figcaption>
+      Burgeri
+    </figcaption>
+  </article>
+  <article (click) ="otvoriTortilje()">
+    <figure><img src="assets/tortilje.jpg"></figure>
+    <figcaption >
+      Tortilje i sendviči
+    </figcaption>
+  </article>
+  <article (click)="otvoriPomfrite()">
+    <figure><img src="https://theshortordercook.com/wp-content/uploads/2021/11/Air-Fryer-Frozen-Crinkle-French-Fries-featured-plate-full-of-cooked-fries-and-a-small-dish-of-ketchup-e1637351333603.jpg"></figure>
+    <figcaption >
+      Pomfrit i umaci
+    </figcaption>
+  </article>
+  <article (click)="otvoriKolace()">
+    <figure><img src="assets/kolaci.jpg"></figure>
+    <figcaption >
+      Slatki program
+    </figcaption>
+  </article>
+    <article (click) ="otvoriPica()">
+      <figure><img src="assets/sokovi.jpg"></figure>
+      <figcaption >
+        Pića
+      </figcaption>
+    </article>
+</div>
+  <div id="buttoni">
+  <button id="sortiraj" (click) ="sortirajPoCijeni()">Sortiraj prema cijeni proizvoda</button>
+  <button id="sortirajAbecedom" (click)="sortirajPoAbecedi()">Sortiraj prema abedenom redu</button>
+    </div>
+  <div id="proizvodi">
+    <div class="proizvod" *ngFor="let x of trenutnaLista" id="proizvod{{x.id}}" >
+      <div class="informacijeProizvod" (click) ="istakniProizvod(x.id)">
+      <img class="slika-proizvoda" src="{{x.slika}}">
+      <h3 id="naziv_proizvoda">{{x.nazivProizvoda}}</h3>
+      <h3 id="cijenaProizvoda">{{x.cijena.toFixed(2)}} KM</h3>
+        </div>
+      <button id="buttonNutritivne"(click) ="otvoriNutritivne(x)">Više informacija</button>
+    </div>
+  </div>
+  <div id="nutritivne-div">
+      <img id="nutritivna_slika" src="assets/burgers.jpg">
+      <h3 id="nutritivna_naziv">CheeseBurger</h3>
+    <div id="informacije">
+      <h4>Dodaci: <span id="dodaci"></span></h4>
+      <h4>Kalorije: <span id="kalorije"></span> </h4>
+      <h4>Ugljikohidrati: <span id="ugljikohidrati"></span></h4>
+      <h4>Proteini: <span id="proteini"></span></h4>
+      <h4>Masti: <span id="masti"></span></h4>
+      <img (click) ="zatvoriNutritivne()" id="close" src="https://png.pngtree.com/png-vector/20220628/ourmid/pngtree-icon-close-button-incorrect-forbidden-png-image_5286028.png">
+  </div>
+  </div>
+</div>
+<div id="placanje-dialog">
+  <img id="logo-placanje" src="assets/logo-no-background.png">
+  <h2>Izaberite način plaćanja</h2>
+  <div id="placanje-slike">
+    <img (click)="otvoriRB()" id="novac"src="/assets/novac.jpeg">
+    <img (click)="otvoriRB()" id="kartica" src="/assets/kartica.jpg">
+  </div>
+  <img id="placanje-nazad">
+  <img (click) ="zatvoriPlacanje()" id="placanje-close" src="https://cdn-icons-png.flaticon.com/512/892/892646.png">
+</div>
+<div id="redni-broj">
+  <img id="logo-redni-broj" src="assets/logo-no-background.png">
+  <h2>Vaš redni broj čekanja je:</h2>
+  <h1 id="redni-broj-value">2</h1>
+  <h2>Molimo pričekajte tiket...</h2>
+  <h3>Preostalo sekundi: <span id="sekunde"></span></h3>
+</div>
+<div id="pregled-korpe">
+  <img id="pregled-korpe-logo" src="assets/logo-no-background.png">
+  <h2>Pregled narudžbe</h2>
+   <div id="korpa-lista">
+     <table>
+       <thead>
+       <tr>
+         <th>Naziv proizvoda</th>
+         <th>Broj komada</th>
+         <th>Cijena</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor="let x of korpa">
+         <td>{{x.naziv}}</td>
+         <td>{{x.kolicina}} kom.</td>
+         <td>{{(x.cijena * x.kolicina).toFixed(2)}} KM</td>
+       </tr>
+       </tbody>
+     </table>
+
+   </div>
+  <div id="iznosi">
+    <table>
+      <tr>
+        <th>Ukupna cijena</th>
+        <th>Cijena bez PDV</th>
+        <th>PDV</th>
+        <th>PDV stopa</th>
+      </tr>
+      <tr>
+        <td id="ukupna"></td>
+        <td id="bez_pdv"></td>
+        <td id="pdv-iznos"></td>
+        <td id="pdv_stopa"></td>
+      </tr>
+    </table>
+
+  </div>
+  <button id="idi-na-placanje" (click)="otvoriPlacanje()">Idi na plaćanje</button>
+  <img id="pregled-korpe-close" (click)="zatvoriPregledKorpe()" src="https://cdn-icons-png.flaticon.com/512/892/892646.png">
+</div>
+<div id="sakrij">
+</div>

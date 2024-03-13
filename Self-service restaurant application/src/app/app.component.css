@@ -1,0 +1,494 @@
+#logo {
+  width:200px;
+  display:block;
+  height:80px;
+}
+header {
+  display:flex;
+  width:75%;
+  box-sizing:border-box;
+  float:left;
+  height:100px;
+}
+#pretraga_jela {
+  height:25px;
+  border:2px solid rgb(243,168,60);
+  width:50%;
+  margin-left:0.5%;
+}
+#pretraga {
+  margin-left:1%;
+  width:10%;
+}
+/*#sortiraj {
+  position:absolute;
+  left:19.7%;
+  margin-left:0;
+  font-weight: bold;
+}
+#sortirajAbecedom {
+  position:absolute;
+  font-weight: bold;
+  left:calc(19.7% + 220px);
+}
+
+ */
+button {
+  border:none;
+  background-color:rgb(243,168,60);
+  color:white;
+  height:31px;
+  cursor:pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header label {
+  color:rgb(243,168,60);
+  font-weight: bolder;
+  font-size: larger;
+  position:relative;
+  top:2px;
+  margin-left:20%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#pretraga-div{
+  width:calc(100% - 200px);
+  position:relative;
+  top:10px;
+}
+#korpa-div {
+  width:25%;
+  float:right;
+  border-left:2px solid rgb(243,168,60);
+  box-sizing: border-box;
+  height:1110px;
+}
+#main {
+  width:75%;
+  margin-top:120px;
+}
+#meni {
+  width:22.5%;
+  float:left;
+  height:990px;
+}
+figure {
+  width:98%;
+  margin:0;
+  height:130px;
+}
+figure img {
+  width:100%;
+  border:1px solid rgb(243,168,60);
+  box-sizing: border-box;
+  height:100%;
+}
+figcaption {
+  text-align:center;
+  color:rgb(243,168,60);
+  font-weight: bolder;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:larger;
+}
+article {
+  margin-bottom:10px;
+}
+#korpa {
+  height:500px;
+  border-bottom:2px solid rgb(243,168,60);
+  box-sizing: border-box;
+}
+#korpa-artikli{
+  height:310px;
+  overflow: scroll;
+  display:block;
+  width:100%;
+  margin-bottom:5px;
+}
+#korpa-button {
+  height:50px;
+  width:100%;
+}
+#button-ocisti {
+  margin:auto;
+  display:block;
+  font-weight:bold;
+  height:35px;
+}
+#korpa-header {
+  height:130px;
+}
+#korpa img{
+  width:30%;
+  margin:auto;
+  display:block;
+}
+ h3 {
+  margin:0;
+  text-align:center;
+  color: rgb(243,168,60);
+  font-weight: bolder;
+  font-size:larger;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#korpa-artikli tr th {
+  width:33.33%;
+  color:rgb(243,168,60);
+  text-align:center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:15px;
+  font-weight: bolder;
+  padding:10px;
+}
+
+table {
+  margin-top:10px;
+  width:100%;
+}
+#komentar-div {
+  width:100%;
+  height:300px;
+  border-bottom:2px solid rgb(243,168,60);
+  padding-top:20px;
+  padding-bottom:20px;
+  box-sizing:border-box;
+}
+#komentar-div label {
+  color: rgb(243,168,60);
+  font-weight: bolder;
+  font-size:16px;
+  text-align:center;
+  width:100%;
+  display:block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#komentar-div textarea {
+  width:90%;
+  display:block;
+  margin:auto;
+  border:1px solid rgb(243,168,60);
+  height:200px;
+  font-size:15px;
+  margin-top:10px;
+}
+#predracun-div {
+  padding-top:10px;
+  height:290px;
+  box-sizing: border-box;
+}
+#predracun-div table tr td {
+  color: rgb(243,168,60);
+  font-weight:bolder;
+  font-size:16px;
+}
+#predracun-div table tr td {
+  padding:5px;
+}
+#predracun-div table {
+  width:70%;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+#predracun-div button {
+  margin:auto;
+  display:block;
+}
+#buttoni {
+  height:50px;
+  width:77.5%;
+  float:right;
+  padding-left:3%;
+  box-sizing: border-box;
+}
+#buttoni button {
+  margin-right:15px;
+  font-weight: bold;
+}
+#proizvodi {
+  width:77.5%;
+  float:right;
+  display:flex;
+  justify-content: flex-start;
+  padding-left:3%;
+  box-sizing: border-box;
+  flex-wrap:wrap;
+  max-height: 940px;
+  overflow: scroll;
+}
+.proizvod {
+  width:22%;
+  background-color: white;
+  height:240px;
+  margin-bottom:25px;
+  border:2px solid rgb(243,168,60);
+  cursor:pointer;
+  position:relative;
+  margin-right:3%;
+  box-sizing: border-box;
+}
+.proizvod img {
+  display:block;
+  width:100%;
+  height:100px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.proizvod h3{
+  margin:0;
+  text-align:center;
+  color:rgb(243,168,60);
+  margin-top:5px;
+  width:100%;
+}
+#cijenaProizvoda {
+  font-size:15px;
+  width:100%;
+  position:absolute;
+  bottom:16%;
+}
+.informacijeProizvod{
+  height:85%;
+}
+#korpa-artikli tr td {
+  color:rgb(243,168,60);
+  text-align:center;
+  padding:5px;
+  font-weight: bolder;
+  width:33.33%;
+}
+#korpa-artikli tr td button {
+  margin-left:5px;
+  margin-right:5px;
+  font-size:20px;
+}
+#buttonNutritivne{
+  height:31px;
+}
+.proizvod button{
+  display:block;
+  background-color:rgb(243,168,60);
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  height:15%;
+  font-weight: bolder;
+}
+#nutritivne-div {
+  position:fixed;
+  height:330px;
+  width:400px;
+  top:calc(50% - 150px);
+  left:calc(50% - 200px);
+  border-radius:50px;
+  background-color: rgb(243,168,60);
+  display:none;
+  z-index:80;
+}
+#placanje-dialog{
+  position:fixed;
+  height:380px;
+  width:450px;
+  top:calc(50% - 190px);
+  left:calc(50% - 225px);
+  border-radius:50px;
+  background-color: white;
+  z-index:80;
+  display:none;
+}
+#novac {
+  width: 170px;
+  height: 100px;
+  display:block;
+  border:2px solid rgb(243,168,60);
+  cursor:pointer;
+}
+  #kartica {
+    width:170px;
+    height:99px;
+    display:block;
+    border:3px solid rgb(243,168,60);
+    cursor:pointer;
+  }
+  #placanje-dialog h2 {
+    color:rgb(243,168,60);
+    text-align:center;
+    margin-top:30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+#placanje-slike {
+  display:flex;
+  width:90%;
+  justify-content: space-between;
+  margin:auto;
+  margin-top:40px;
+}
+#logo-placanje {
+  width:160px;
+  height:65px;
+  display:block;
+  margin:auto;
+  margin-top:20px;
+}
+#placanje-close {
+  width:50px;
+  height:50px;
+  position:relative;
+  left:20px;
+  top:25px;
+  cursor:pointer;
+}
+#placanje {
+  font-weight:bold;
+  padding:10px;
+  height:35px;
+}
+#nutritivna_slika{
+  width:180px;
+  height:100px;
+  display:block;
+  margin:auto;
+  margin-top:20px;
+}
+#nutritivna_naziv{
+  color:white;
+  margin-top:10px;
+  margin-bottom:5px;
+}
+#nutritivne-div h4 {
+  color:white;
+  margin:10px;
+}
+#informacije {
+  width:70%;
+  margin:auto;
+}
+#close {
+  height:60px;
+  width:70px;
+  position:relative;
+  top:-320px;
+  left:260px;
+  cursor:pointer;
+}
+article {
+cursor:pointer;
+}
+#sakrij {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 60;
+  margin:0;
+  padding:0;
+  display:none;
+}
+#redni-broj{
+  position:fixed;
+  height:380px;
+  width:450px;
+  top:calc(50% - 190px);
+  left:calc(50% - 225px);
+  border-radius:50px;
+  background-color: white;
+  z-index:80;
+  display:none;
+}
+#logo-redni-broj {
+  width:160px;
+  height:65px;
+  display:block;
+  margin:auto;
+  margin-top:20px;
+}
+#redni-broj h2 {
+  color:rgb(243,168,60);
+  text-align:center;
+  margin-top:30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#redni-broj-value {
+  color:darkred;
+  text-align:center;
+  margin-top:30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  font-size:50px;
+}
+#pregled-korpe{
+  position:fixed;
+  height:610px;
+  width:540px;
+  top:calc(50% - 305px);
+  left:calc(50% - 270px);
+  border-radius:50px;
+  background-color: white;
+  z-index:80;
+  display:none;
+}
+#pregled-korpe-logo {
+  width:160px;
+  height:65px;
+  display:block;
+  margin:auto;
+  margin-top:20px;
+}
+#pregled-korpe h2 {
+  margin:auto;
+  width:fit-content;
+  color:rgb(243,168,60);
+  margin-top:20px;
+}
+#korpa-lista table tr th {
+  text-align: left;
+  color:rgb(243,168,60);
+  font-size:17px;
+  padding-bottom:5px;
+}
+#korpa-lista table tr td {
+  text-align: left;
+  color:rgb(243,168,60);
+  font-size:14px;
+  font-weight: bold;
+}
+#korpa-lista {
+  width:80%;
+  margin:auto;
+  overflow: scroll;
+  height:350px;
+}
+#pregled-korpe-close {
+  width:50px;
+  height:50px;
+  position:relative;
+  left:40px;
+  top:-40px;
+  cursor:pointer;
+  display:block;
+}
+#idi-na-placanje{
+  position:relative;
+  left:375px;
+  margin-top:17px;
+  font-weight: bold;
+  padding:10px;
+  height:35px;
+}
+#iznosi {
+  width:80%;
+  margin:auto;
+}
+#iznosi table tr th {
+  color:rgb(243,168,60);
+  text-align:center;
+  font-size:17px;
+}
+#iznosi table tr td {
+  color:rgb(243,168,60);
+  text-align:center;
+  font-weight: bold;
+  font-size:15px;
+}
+
