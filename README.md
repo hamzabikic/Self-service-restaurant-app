@@ -37,6 +37,19 @@ This command starts a development server. Once the server is up and running, the
 
 # Screenshots
 
+<img src="app-images/korpa1.png">
+<br>
+<img src="app-images/korpa2.png">
+<br>
+<img src="app-images/odabir-kategorije.png">
+<br>
+<img src="app-images/pretraga.png">
+<br>
+<img src="app-images/nutritivne.png">
+<br>
+<img src="app-images/placanje.png">
+<br>
+<img src="app-images/redni-broj.png">
 
 
 
