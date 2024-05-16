@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   trenutnaLista: Proizvod[] = Proizvodi.listaAkcija;
   korpa: korpaProizvod[] = [];
   pretraga="";
+  trenutno = "akcijski";
   obojifig(id:number) {
     let Elementi = document.getElementsByTagName('figure');
     // @ts-ignore
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit{
   }
 
   otvoriAkcijske() {
+    this.trenutno = "akcijski";
     this.obojifig(1);
     this.trenutnaLista = Proizvodi.listaAkcija;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -150,6 +152,7 @@ export class AppComponent implements OnInit{
     document.getElementById("sakrij").style.display="none";
   }
   otvoriPica() {
+    this.trenutno="pica";
     this.obojifig(6);
     this.trenutnaLista = Proizvodi.listaPica;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -165,6 +168,7 @@ export class AppComponent implements OnInit{
   }
 
   otvoriBurgere() {
+    this.trenutno="burgeri";
     this.obojifig(2);
     this.trenutnaLista = Proizvodi.listaBurgera;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -180,6 +184,7 @@ export class AppComponent implements OnInit{
   }
 
   otvoriTortilje() {
+    this.trenutno="tortilje";
     this.obojifig(3);
     this.trenutnaLista = Proizvodi.listaTortilja;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -193,6 +198,7 @@ export class AppComponent implements OnInit{
       } },50);
   }
   otvoriPomfrite() {
+    this.trenutno="pomfriti";
     this.obojifig(4);
     this.trenutnaLista = Proizvodi.ListaPomfriti;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -206,6 +212,7 @@ export class AppComponent implements OnInit{
       } },50);
   }
   otvoriKolace() {
+    this.trenutno="kolaci";
     this.obojifig(5);
     this.trenutnaLista = Proizvodi.listaKolaca;
     let elementi = document.getElementsByClassName("slika-proizvoda");
@@ -220,7 +227,26 @@ export class AppComponent implements OnInit{
   }
   pretraziArtikle() {
     if(this.pretraga=="") {
-      this.trenutnaLista = Proizvodi.listaAkcija;
+      if(this.trenutno=="akcijski") {
+        this.trenutnaLista= Proizvodi.listaAkcija;
+      }
+      else if (this.trenutno=="burgeri") {
+        this.trenutnaLista= Proizvodi.listaBurgera;
+      }
+      else if (this.trenutno == "tortilje") {
+        this.trenutnaLista = Proizvodi.listaTortilja;
+      }
+      else if(this.trenutno =="pomfriti") {
+        this.trenutnaLista = Proizvodi.ListaPomfriti;
+      }
+      else if(this.trenutno == "kolaci") {
+        this.trenutnaLista = Proizvodi.listaKolaca;
+      }
+      else {
+        this.trenutnaLista = Proizvodi.listaPica;
+      }
+
+      setTimeout(()=> {this.boldirajIzabrane();},50);
       return;
     }
     let lista :any[] = [Proizvodi.ListaPomfriti,Proizvodi.listaTortilja, Proizvodi.listaBurgera,
@@ -234,7 +260,7 @@ export class AppComponent implements OnInit{
       }
     }
      this.trenutnaLista = pretragaLista;
-     this.boldirajIzabrane();
+     setTimeout(()=> {this.boldirajIzabrane();},50);
   }
 
   otvoriPlacanje() {
@@ -279,7 +305,7 @@ export class AppComponent implements OnInit{
 
   ocistiKorpu() {
     this.korpa = [];
-    this.boldirajIzabrane();
+    setTimeout(()=> {this.boldirajIzabrane();},50);
     this.IzracunajCijenu();
     // @ts-ignore
     document.getElementById("komentar").value="";
